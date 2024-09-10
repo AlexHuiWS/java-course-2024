@@ -15,12 +15,13 @@ public class DigitMultiplier {
         input.close();
         
         // Multiply all digits
+        number = Math.abs(number);
         do {
-            product *= Math.abs(number % 10);
-            number = (number - number % 10) / 10;
-        } while (Math.abs(number) > 0);
+            product *= number % 10;
+            number = number / 10;
+        } while (number > 0);
 
         // Print outputs
-        System.out.println("Product of all digit: " + product);
+        System.out.println("Product of all digits: " + product);
     }
 }
