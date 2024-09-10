@@ -13,8 +13,14 @@ public class RandomGuess {
         Scanner input = new Scanner(System.in);
         System.out.println("Input an integer from 0 to 1000: ");
         int number = input.nextInt();
+
+        // Check input
+        while (number < 0 || number > 1000) {
+            System.out.println("Your input is out of bound! Please enter again: ");
+            number = input.nextInt();
+        }
         input.close();
-        
+
         // Guess the integer
         do {
             Random r = new Random(); 

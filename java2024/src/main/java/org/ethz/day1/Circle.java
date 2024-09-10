@@ -14,6 +14,12 @@ public class Circle {
         Scanner input = new Scanner(System.in);
         System.out.println("Input the radius of the circle: ");
         double radius = input.nextDouble();
+
+        // Check input
+        while (radius <= 0) {
+            System.out.println("Invalid! Please enter again: ");
+            radius = input.nextInt();
+        }
         input.close();
         
         // Calculate outputs

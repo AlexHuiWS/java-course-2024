@@ -5,7 +5,7 @@ public class FibonacciNumber {
     public static void main(String[] args) {
         // Read input
         Scanner input = new Scanner(System.in);
-        System.out.println("Input a positive integer: ");
+        System.out.println("Input a non-negative integer: ");
         int n = input.nextInt();
 
         // Check input
@@ -16,26 +16,26 @@ public class FibonacciNumber {
         input.close();
 
         // Calculate Fibonacci number
-        int number_2 = 0;
-        int number_1 = 1;
-        int number_n = -999;
+        int fibonacci_0 = 0;
+        int fibonacci_1 = 1;
+        int fibonacci_n = fibonacci_0;
 
         if (n == 0) {
-            number_n = number_2;
+            fibonacci_n = fibonacci_0;
         }
         else if (n == 1) {
-            number_n = number_1;
+            fibonacci_n = fibonacci_1;
         }
         else {
             for (int i = 2; i <= n; i++) {
-                number_n = number_2 + number_1;
-                number_2 = number_1;
-                number_1 = number_n;
+                fibonacci_n = fibonacci_0 + fibonacci_1;
+                fibonacci_0 = fibonacci_1;
+                fibonacci_1 = fibonacci_n;
             }
         }
 
         // Print outputs
-        System.out.println(n + "th Fibonacci Number is: " + number_n);
+        System.out.println(n + "th Fibonacci Number is: " + fibonacci_n);
     }
     
 }
